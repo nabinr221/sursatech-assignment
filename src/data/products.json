@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Philodendron flower pot",
+    "description": "Product 1 description",
+    "price": 100,
+    "image": "/img2.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Lime colored ceramic terracotta pot",
+    "description": "Lime colored ceramic terracotta pot ",
+    "price": 140,
+    "image": "/img3.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Houseplant",
+    "description": "Houseplant description.. ",
+    "price": 200,
+    "image": "/img4.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Hoveya palm plant",
+    "description": "Hoveya palm plant description.. ",
+    "price": 250,
+    "image": "/img5.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Lime colored ceramic terracotta",
+    "description": "Lime colored ceramic terracotta description.. ",
+    "price": 450,
+    "image": "/img6.jpg"
+  },
+  {
+    "id": 6,
+    "name": "May Lily in Vase",
+    "description": "May Lily in Vase description.. ",
+    "price": 450,
+    "image": "/img7.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Decorative plants in flower pots",
+    "description": "Decorative plants in flower pots for the interior 482 description.. ",
+    "price": 450,
+    "image": "/img8.jpg"
+  }
+]
