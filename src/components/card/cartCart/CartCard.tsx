@@ -3,8 +3,21 @@ import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "@/lib/features/cart/cartSlice";
+interface CartItem {
+  id: string;
+  product: {
+    name: string;
+    price: number;
+    image?: string;
+  };
+  quantity: number;
+}
 
-const CartCard = ({ cartData }) => {
+interface Props {
+  cartData: CartItem;
+}
+
+const CartCard: React.FC<Props> = ({ cartData }) => {
   const dispatch = useDispatch();
 
   const handleRemoveItem = () => {
