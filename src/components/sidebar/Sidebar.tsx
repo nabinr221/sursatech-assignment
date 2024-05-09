@@ -7,9 +7,9 @@ import { LuSettings2 } from "react-icons/lu";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className='w-full px-2 py-3 bg-white/40 backdrop-blur-sm rounded-full'>
+    <div className='w-full px-2 py-3 bg-white/30 backdrop-blur-md sm:bg-white/40 sm:backdrop-blur-sm rounded-full'>
       <nav className='my-1'>
-        <ul className='flex flex-col justify-center items-center gap-5'>
+        <ul className='flex flex-row sm:flex-col justify-center items-center gap-5'>
           <IconLink href='/'>
             <RiHome5Line className='text-2xl' color='black' />
           </IconLink>

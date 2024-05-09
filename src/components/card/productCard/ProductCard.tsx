@@ -21,9 +21,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   isActive,
 }) => {
   return (
-    <div className={` ${className} w-full h-full p-5 `}>
+    <div className={` ${className} w-full h-full sm:p-5 `}>
       <div
-        className={`w-[14rem] h-[15rem] mx-auto ${
+        className={` w-[10rem] h-[10rem] md:w-[14rem] md:h-[15rem] lg:w-[14rem] lg:h-[15rem] mx-auto ${
           isActive ? "zoom-effect" : ""
         }`}
       >

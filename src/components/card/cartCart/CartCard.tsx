@@ -13,7 +13,7 @@ const CartCard = ({ cartData }) => {
   };
 
   return (
-    <div className='px-5 w-full flex justify-between  items-center gap-5 p-3 h-full bg-white/50 rounded-lg backdrop-blur-3xl transition-all duration-500 hover:bg-white/75'>
+    <div className='px-5 w-full flex flex-col sm:flex-row justify-between  items-center gap-5 p-3 h-full bg-white/50 rounded-lg backdrop-blur-3xl transition-all duration-500 hover:bg-white/75'>
       <div
         className={`w-[5rem] h-[5rem] ${
           cartData?.product?.image ? "" : "bg-white/80 rounded-lg  "

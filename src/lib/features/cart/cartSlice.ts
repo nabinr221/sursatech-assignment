@@ -61,8 +61,15 @@ export const cartSlice = createSlice({
         state.cart.splice(index, 1); // Remove the item from the cart array
       }
     },
+    checkout: (
+      state: CartState,
+      action: PayloadAction<{ product: Product }>
+    ) => {
+      // Clear cart
+      state.cart = [];
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, checkout } = cartSlice.actions;
 export default cartSlice.reducer;
