@@ -1,4 +1,3 @@
-
 import React from "react";
 import IconLink from "../iconLink/IconLink";
 import { PiPottedPlant } from "react-icons/pi";
@@ -13,14 +12,14 @@ const Sidebar: React.FC = () => {
         <ul className='flex flex-col justify-center items-center gap-5'>
           <IconLink href='/'>
             <RiHome5Line className='text-2xl' color='black' />
-        </IconLink>
+          </IconLink>
           <IconLink href='/products'>
             <PiPottedPlant className='text-2xl' color='black' />
           </IconLink>
           <IconLink href='/carts'>
             <IoCartOutline className='text-2xl' color='black' />
           </IconLink>
-          <IconLink href='/setting'>
+          <IconLink href='#'>
             <LuSettings2 className='text-2xl' color='black' />
           </IconLink>
         </ul>

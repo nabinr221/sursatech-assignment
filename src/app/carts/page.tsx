@@ -9,7 +9,11 @@ const AddToCart = () => {
   console.log(cartData);
   return (
     <div className='my-5 space-y-2'>
-      {cartData.length === 0 && <h1 className="text-center my-20 text-2xl font-bold text-white/40">Cart is empty</h1>}
+      {cartData.length === 0 && (
+        <h1 className='text-center my-20 text-2xl font-bold text-white/40'>
+          Cart is empty
+        </h1>
+      )}
       {cartData.map((cartData: any) => (
         <CartCard cartData={cartData} key={cartData.id} />
       ))}
