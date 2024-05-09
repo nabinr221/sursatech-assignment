@@ -31,7 +31,7 @@ export default function RootLayout({
         }}
       >
         <StoreProvider>
-          <div className='w-[80%] flex items-center justify-center gap-5'>
+          <div className='w-[90%] sm:w-[80%] flex flex-col sm:flex-row items-center justify-center gap-5'>
             <div className=''>
               <Sidebar />
             </div>
