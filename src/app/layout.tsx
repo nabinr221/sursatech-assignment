@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Navbar from "@/components/navbar/Navbar";
 
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <link
+      {/* <link
         rel='stylesheet'
         type='text/css'
         href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'
@@ -27,7 +29,7 @@ export default function RootLayout({
         rel='stylesheet'
         type='text/css'
         href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css'
-      />
+      /> */}
 
       <body
         className={`min-w-screen min-h-screen flex items-center justify-center  ${inter.className}`}
