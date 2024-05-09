@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import ProductCard from "@/components/card/productCard/ProductCard";
 import useFetchData from "@/hooks/useFetchData";
 import { LuPlus } from "react-icons/lu";
+import { addToCart } from "@/lib/features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+// import { UseDispatch } from "react-redux";
 
 interface Product {
   id: number;
@@ -12,13 +15,11 @@ interface Product {
 }
 
 const Products: React.FC = () => {
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useFetchData<Product[]>("products");
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
+
+  // custom hooks for fetching data
+  const { data: products } = useFetchData<Product[]>("products");
 
   useEffect(() => {
     if (products && products.length > 0) {
@@ -57,6 +58,13 @@ interface ProductInfoProps {
 }
 
 const ProductInfo: React.FC<ProductInfoProps> = ({ activeProduct }) => {
+  // const dispatch = UseDispatch();
+  const dispatch = useDispatch();
+  const addData = () => {
+    console.log("thishs i tress");
+    dispatch(addToCart({ product: activeProduct }));
+  };
+
   return (
     <div className='flex justify-center items-center h-full'>
       <div className='w-fit px-6 py-3 absolute -bottom-12 bg-slate-300 backdrop-blur-2xl flex gap-5 items-center justify-center rounded-full'>
@@ -64,7 +72,10 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ activeProduct }) => {
           <p>{activeProduct.name}</p>
           <p className='text-lg font-bold'>${activeProduct.price}</p>
         </div>
-        <button className='w-fit py-2 px-3 bg-white capitalize text-xs font-semibold flex gap-2 items-center justify-center rounded-full'>
+        <button
+          onClick={addData}
+          className='w-fit py-2 px-3 bg-white capitalize text-xs font-semibold flex gap-2 items-center justify-center rounded-full'
+        >
           <LuPlus />
           add to cart
         </button>
