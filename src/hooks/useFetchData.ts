@@ -1,16 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-interface ImportMeta {
-  readonly env: {
-    [key: string]: string;
-    readonly MODE: string;
-    readonly BASE_URL: string;
-    // Add your custom environment variables here
-    readonly VITE_APP_API_BASE_URL: string;
-    // Add more environment variables as needed
-  };
-}
 
 const useFetchData = (endpoint: string) => {
   const [data, setData] = useState(null);

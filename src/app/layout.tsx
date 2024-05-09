@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Navbar from "@/components/navbar/Navbar";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,17 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      {/* <link
-        rel='stylesheet'
-        type='text/css'
-        href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'
-      />
-      <link
-        rel='stylesheet'
-        type='text/css'
-        href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css'
-      /> */}
-
       <body
         className={`min-w-screen min-h-screen flex items-center justify-center  ${inter.className}`}
         style={{
@@ -40,15 +30,17 @@ export default function RootLayout({
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className='w-[80%] flex items-center justify-center gap-5'>
-          <div className=''>
-            <Sidebar />
+        <StoreProvider>
+          <div className='w-[80%] flex items-center justify-center gap-5'>
+            <div className=''>
+              <Sidebar />
+            </div>
+            <div className='w-full h-full bg-white/30 backdrop-blur-md  p-5 rounded-2xl'>
+              <Navbar />
+              {children}
+            </div>
           </div>
-          <div className='w-full h-full bg-white/30 backdrop-blur-md  p-5 rounded-2xl'>
-            <Navbar />
-            {children}
-          </div>
-        </div>
+        </StoreProvider>
       </body>
     </html>
   );
