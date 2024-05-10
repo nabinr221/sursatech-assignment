@@ -51,16 +51,17 @@ export const cartSlice = createSlice({
       state: CartState,
       action: PayloadAction<{ itemId: string }>
     ) => {
-      console.log("removeFromCart", action.payload);
       // Remove item from cart
       const index = state.cart.findIndex(
         (item) => item.id === action.payload.itemId
       );
 
-      if (index) {
+      if (index !== -1) {
+        // Check if index is not equal to -1
         state.cart.splice(index, 1); // Remove the item from the cart array
       }
     },
+
     checkout: (
       state: CartState,
       action: PayloadAction<{ product: Product | null }>

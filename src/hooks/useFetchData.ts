@@ -13,18 +13,18 @@ interface ApiResponse {
 const useFetchData = (endpoint: string) => {
   const [data, setData] = useState<ApiResponse[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<AxiosError | null>(null);
+  const [error, setError] = useState<AxiosError<any> | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response: AxiosResponse<ApiResponse> = await axios.get(
+        const response: AxiosResponse<ApiResponse[]> = await axios.get(
           `${process.env.NEXT_PUBLIC_API_BASE_URL}/${endpoint}`
         );
-        setData(response.data);
+        setData(response.data); // Wrap response.data in an array
       } catch (error) {
-        setError(error);
+        setError(error as AxiosError<any>);
       } finally {
         setIsLoading(false);
       }
