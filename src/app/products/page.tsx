@@ -28,6 +28,9 @@ const Products: React.FC = () => {
     if (products && products.length > 0) {
       setActiveProduct(products[0]); // Set the active product to the first product initially
       setActiveProduct(products[activeIndex]); // Set the active product based on activeIndex
+    } else {
+      setActiveProduct(data[0]); // Set the active product to the first product initially
+      setActiveProduct(data[activeIndex]); // Set the active product based on activeIndex
     }
   }, [activeIndex, products]);
 
