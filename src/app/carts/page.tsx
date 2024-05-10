@@ -18,7 +18,7 @@ const AddToCart: React.FC = () => {
 
   const handleCheckOut = () => {
     console.log("handleCheckOut");
-    dispatch(checkout());
+    dispatch(checkout({ product: null }));
     router.push("/");
   };
 

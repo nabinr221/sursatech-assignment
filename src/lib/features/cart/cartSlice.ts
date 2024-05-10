@@ -63,7 +63,7 @@ export const cartSlice = createSlice({
     },
     checkout: (
       state: CartState,
-      action: PayloadAction<{ product: Product }>
+      action: PayloadAction<{ product: Product | null }>
     ) => {
       // Clear cart
       state.cart = [];
