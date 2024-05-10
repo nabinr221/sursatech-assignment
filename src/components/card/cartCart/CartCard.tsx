@@ -6,6 +6,7 @@ import { removeFromCart } from "@/lib/features/cart/cartSlice";
 interface CartItem {
   id: string;
   product: {
+    id: number;
     name: string;
     price: number;
     image?: string;
@@ -22,7 +23,7 @@ const CartCard: React.FC<Props> = ({ cartData }) => {
 
   const handleRemoveItem = () => {
     if (!cartData) return;
-    dispatch(removeFromCart({ id: cartData?.id }));
+    dispatch(removeFromCart({ itemId: cartData?.id }));
   };
 
   return (

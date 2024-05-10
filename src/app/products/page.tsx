@@ -21,7 +21,7 @@ const Products: React.FC = () => {
 
   // custom hooks for fetching data
   const { data: products } = useFetchData("products");
-
+  
   useEffect(() => {
     if (products && products.length > 0) {
       setActiveProduct(products[0]); // Set the active product to the first product initially
