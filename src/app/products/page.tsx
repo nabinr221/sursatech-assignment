@@ -7,6 +7,8 @@ import { LuPlus } from "react-icons/lu";
 import { addToCart } from "@/lib/features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 
+// to deploy to vercel import form data.js file
+import { products as data } from "@/data/data";
 interface Product {
   id: any;
   name: string;
@@ -21,7 +23,7 @@ const Products: React.FC = () => {
 
   // custom hooks for fetching data
   const { data: products } = useFetchData("products");
-  
+
   useEffect(() => {
     if (products && products.length > 0) {
       setActiveProduct(products[0]); // Set the active product to the first product initially
@@ -66,13 +68,23 @@ const Products: React.FC = () => {
   return (
     <div className='w-full h-full mt-10 relative'>
       <Slider {...settings} className=''>
-        {products?.map((product: Product, index: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            isActive={index === activeIndex}
-          />
-        ))}
+        {products && products.length > 0
+          ? /* data fetch from data.json server  for development  */
+            data?.map((product: Product, index: number) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                isActive={index === activeIndex}
+              />
+            ))
+          : /* data  import from data.ts file for deploy  */
+            data?.map((product: Product, index: number) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                isActive={index === activeIndex}
+              />
+            ))}
       </Slider>
       {activeProduct && <ProductInfo activeProduct={activeProduct} />}
     </div>
